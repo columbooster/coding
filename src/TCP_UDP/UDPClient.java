@@ -56,33 +56,7 @@ public class UDPClient extends Thread {
     cf. 채팅에서 TCP를 사용하는 이유?
     채팅에서 TCP를 사용하는 이유는 연결된 상태에서 순서대로 송신자와 수신자가 보낸 메세지를 그대로 전송할 수 있기 때문이다.
     고로 양뱡향통신에 유리하다. (UDP는 그 순서를 보장해주지 못하기 때문이다.)
-
-    public static void main(String[] args) {
-        // 키보드 입력 받기 위한 변수
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("보낼 메세지 입력 :");
-        String msg = scanner.next();
-
-        try {
-            // 전송할 수 있는 UDP 소켓 생성
-            DatagramSocket dsoc = new DatagramSocket();
-
-            // 받을 곳의 주소 생성
-            InetAddress ia = InetAddress.getByName("127.0.0.1");
-
-            // 전송할 데이터 생성
-            DatagramPacket dp = new DatagramPacket(msg.getBytes(),msg.getBytes().length,ia, 7779);
-
-            //데이터 전송
-            dsoc.send(dp);
-            dsoc.close();
-        } catch (Exception e){
-            System.out.println(e.getMessage());
-        }
-
-
-
-    }*/
+*/
 
     private String str;
     private BufferedReader file;
